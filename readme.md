@@ -20,6 +20,23 @@ atau install laravel versi 6
 rm -rf src && composer create-project laravel/laravel src "6.*"
 ```
 
+### Alternatif Install Laravel
+untuk mamang yang belum install php dan composer di local developmentnya bisa memanfaatkan composer dan php yang sudah terintall di docker untuk install laravelnya.
+```bash
+rm -rf src && sudo docker-compose run --rm composer create-project laravel/laravel .
+```
+
+mengaktifkan symlink
+
+```bash
+sudo docker-compose run --rm artisan storage:link 
+```
+
+ubah permission folder src
+```bash
+sudo chown -R $USER:$USER src
+``` 
+
 ## Restart Service Container
 ```bash
 sudo docker-compose down && sudo docker-compose up -d --build
