@@ -9,8 +9,20 @@ Cek hasil: http://localhost:8080
 
 ## Install Laravel
 
+Install laravel terbaru.
+ 
 ```bash
-sudo rm -rf src && sudo docker-compose run --rm composer create-project laravel/laravel .
+rm -rf src && composer create-project laravel/laravel src
+```
+
+atau install laravel versi 6
+```bash
+rm -rf src && composer create-project laravel/laravel src "6.*"
+```
+
+## Restart Service Container
+```bash
+sudo docker-compose down && sudo docker-compose up -d --build
 ```
 
 ### Menjalankan Artisan Migrate
@@ -32,8 +44,21 @@ Menjalankan artisan migrate
 sudo docker-compose run --rm artisan migrate
 ```
 
-## Mematikan Container
+## Mematikan Service Container
 
 ```bash
 sudo docker-compose down
+```
+
+## Menjalankan Service Lainnya
+```bash
+#Contoh menjalankan composer
+sudo docker-compose run --rm composer update
+
+#Contoh menjalankan npm
+sudo docker-compose run --rm npm run dev
+
+#Contoh menjalankan artisan
+sudo docker-compose run --rm artisan storage:link
+
 ```
