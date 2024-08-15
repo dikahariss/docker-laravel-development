@@ -1,7 +1,7 @@
 ## Docker Build
 
 ```bash
-docker-compose up -d --build
+docker compose up -d --build
 ```
 
 Cek hasil: http://localhost:8080
