@@ -66,7 +66,7 @@ docker compose down
 docker compose run --rm php composer update
 
 #Contoh menjalankan npm
-docker compose run --rm node run dev
+docker compose run --rm npm run dev
 
 #Contoh menjalankan artisan
 docker compose run --rm php php artisan storage:link
