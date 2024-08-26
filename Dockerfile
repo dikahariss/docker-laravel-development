@@ -15,6 +15,9 @@ RUN apk add --no-cache \
     && pecl install redis \
     && docker-php-ext-enable redis opcache
 
+ENV TZ=Asia/Jakarta
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 RUN usermod -u 1000 www-data && groupmod -g 1000 www-data
